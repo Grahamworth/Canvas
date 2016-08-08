@@ -19,7 +19,7 @@
             if (typeof(Worker) !== "undefined") {
                 var canvas = document.getElementById("MyCanvas");
                 if (canvas.getContext) {
-                    w = new Worker("/scripts/DrawWorker.js");
+                    w = new Worker("\\scripts\\DrawWorker.js");
                 }
             } else {
                 alert("ahhh");
