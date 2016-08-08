@@ -1,15 +1,25 @@
-var http = require('http'), 
-    fs = require('fs');
-
-
-fs.readFile('index.html', function(err,html){
-    if (err){
-        throw err;
-    }
-    http.createServer(function (req, res) {
-        console.log('Got request for ' + req.url);
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write(html);
-        res.end();
-    }).listen(process.env.PORT);
+var express = require('express');
+var stormpath = require('express-stormpath');
+ 
+var app = express();
+ 
+app.set('views', './views');
+app.set('view engine', 'jade');
+ 
+app.use(stormpath.init(app, {
+  expand: {
+    customData: true
+  }
+}));
+ 
+app.get('/', stormpath.getUser, function(req, res) {
+  res.render('home', {
+    title: 'Welcome'
+  });
 });
+ 
+app.on('stormpath.ready',function(){
+  console.log('Stormpath Ready');
+});
+ 
+app.listen(3000);
