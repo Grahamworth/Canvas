@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function draw(){
+            var canvas = document.getElementById("MyCanvas");
+            if (canvas.getContext) {
+              var ctx = canvas.getContext("2d");
+              ctx.font = "italic 36px/2 Unknown Font, sans-serif";
+              ctx.fillStyle = "blue";
+              ctx.fillRect(0, 0, canvas.width, canvas.height);
+              ctx.fillStyle = "white";
+              ctx.fillText("testing", canvas.width / 2, canvas.height * .8);
+          }
+        }
+
+        function drawCircle(){
+            if (typeof(Worker) !== "undefined") {
+                var canvas = document.getElementById("MyCanvas");
+                if (canvas.getContext) {
+                    w = new Worker("\DrawWorker.js");
+                }
+            } else {
+                alert("ahhh");
+            }
+        }
+
+    </script>
+</head>
+
+<body onload="draw()">
+    <canvas id="MyCanvas" width="500" height="500" onclick="drawCircle()">
+
+
+    </canvas>
+
+</body>
+
+</html>
