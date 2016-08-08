@@ -1,0 +1,23 @@
+{
+  "name": "canvas",
+  "version": "1.0.0",
+  "description": "Canvas tests",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"error: no test specified\" && exit1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grahmworth/Canvas.git"
+  },
+  "keywords": [
+    "Canvas"
+  ],
+  "author": "Graham Hollingsworth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Grahmworth/Canvas/issues"
+  },
+  "homepage": "https://github.com/Grahmworth/Canvas#readme"
+}
