@@ -1,7 +1,7 @@
 var canvas = "test";
 
 function DrawWorker() {
-    for (var j = 5; j > 1; j--) {
+/*    for (var j = 5; j > 1; j--) {
         var ctx = canvas.getContext("2d");
         ctx.beginPath();
         var x = 200 + (j * 20);               // The x-coordinate.
@@ -14,7 +14,7 @@ function DrawWorker() {
         ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise); // Create the arc path.
         ctx.stroke();
         setTimeout(function () { }, 1000);
-    }
+    }*/
 }
 
 DrawWorker();
