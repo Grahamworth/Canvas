@@ -1,4 +1,4 @@
-var canvas = "";
+var canvas = "test";
 
 function DrawWorker() {
     for (var j = 5; j > 1; j--) {
